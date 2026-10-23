@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Registration</h1>
+        <p>Enter employee details below.</p>
+
+        <form id="employeeForm">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder="Enter full name" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter email" required>
+
+            <label for="department">Department</label>
+            <select id="department" required>
+                <option value="">Select department</option>
+                <option>IT</option>
+                <option>HR</option>
+                <option>Finance</option>
+                <option>Marketing</option>
+            </select> 
+
+            <button type="submit">Register Employee</button>
+        </form>
+
+        <p id="message" role="status"></p>
+        <h2>Registered Employees</h2>
+        <ul id="employeeList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
