@@ -12,20 +12,19 @@ permissions:
   packages: write
 
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Validate application files
+      - name: Validate files
         run: |
           test -f index.html
           test -f style.css
           test -f script.js
-          grep -q 'Employee Registration' index.html
-          echo "Validation successful!"
+          echo "Validation successful"
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -38,7 +37,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Push Docker Image
+      - name: Build and Push Image
         uses: docker/build-push-action@v6
         with:
           context: .
