@@ -42,4 +42,6 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name == 'push' }}
-          tags: ghcr.io/sablemayur/employee-registration-app:latest
+          tags: |
+            ghcr.io/sablemayur/employee-registration-app:latest
+            ghcr.io/sablemayur/employee-registration-app:v1.${{ github.run_number }}
